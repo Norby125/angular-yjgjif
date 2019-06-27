@@ -1,16 +1,20 @@
-import { Component, OnInit, Input, ContentChild, TemplateRef } from '@angular/core';
+import { Component, AfterViewInit, Input, ContentChild, TemplateRef, ContentChildren } from '@angular/core';
 import {PersonComponent} from '../person/person.component';
+import {TableColumnComponent} from '../table-column/table-column.component';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TableComponent implements OnInit {
+export class TableComponent implements AfterViewInit {
   @Input() public data;
   @ContentChild('person', {read: TemplateRef, static: false}) personTemplateRef;
+  @ContentChildren(TableColumnComponent) tableColumns;
   constructor() { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
+    console.log(this.personTemplateRef);
+    console.log(this.tableColumns);
   }
 
 }

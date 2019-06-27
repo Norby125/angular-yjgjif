@@ -1,5 +1,17 @@
 <app-table [data]="data">
-  <ng-template #person let-item>
-    <app-person [person]="item"></app-person>
-  </ng-template>
+  <app-table-column>
+    <ng-container>
+      <ng-template #person let-item>
+        <app-person [person]="item"></app-person>
+      </ng-template>
+    </ng-container>
+
+  </app-table-column>
+  <app-table-column>
+    <ng-container>
+      <ng-template #person let-item>
+        <app-person2 [person]="item"></app-person2>
+      </ng-template>
+    </ng-container>
+  </app-table-column>
 </app-table>
