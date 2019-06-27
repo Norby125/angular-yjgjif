@@ -9,11 +9,13 @@ import {TableColumnComponent} from '../table-column/table-column.component';
 export class TableComponent implements AfterViewInit {
   @Input() public data;
   @ContentChild('person', {read: TemplateRef, static: false}) personTemplateRef;
+  @ContentChildren('person', {read: TemplateRef}) personTemplatesRef;
   @ContentChildren(TableColumnComponent) tableColumns;
   constructor() { }
 
   ngAfterViewInit() {
     console.log(this.personTemplateRef);
+    console.log(this.personTemplatesRef);
     console.log(this.tableColumns);
   }
 

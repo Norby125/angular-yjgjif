@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent  {
   data: Person[] = [
     {age: 10, name: "John"}, 
-    {age: 20, name: "Doe"}
+    {age: 20, name: "Doe"},
+    {age: 30, name: "Jay"},
+    {age: 40, name: "Lead"}
   ]
 }
 
