@@ -1,1 +1,5 @@
-<app-table [data]="data"></app-table>
+<app-table [data]="data">
+  <ng-template #person let-item>
+    <app-person [person]="item"></app-person>
+  </ng-template>
+</app-table>
