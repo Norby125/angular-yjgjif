@@ -1,7 +1,7 @@
 <table style="width:100%">
   <tr *ngFor="let item of data">
-    <td *ngFor="let column of tableColumns"> 
-      <ng-container *ngTemplateOutlet="personTemplateRef; context: {$implicit: item}"></ng-container>
+    <td *ngFor="let column of tableColumns; index as i"> 
+      <ng-container *ngTemplateOutlet="getTemplateRef(i); context: {$implicit: item}"></ng-container>
     </td> 
 
   </tr>
