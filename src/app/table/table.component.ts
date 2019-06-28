@@ -8,20 +8,19 @@ import {TableColumnComponent} from '../table-column/table-column.component';
 })
 export class TableComponent implements AfterViewInit {
   @Input() public data;
-  @ContentChild('person', {read: TemplateRef, static: false}) personTemplateRef;
-  @ContentChildren('person', {read: TemplateRef}) personTemplatesRef: QueryList<any>;
-  @ContentChildren(TableColumnComponent) tableColumns;
+  @ContentChildren(TableColumnComponent) tableColumns: QueryList<TableColumnComponent>;
   constructor() { }
 
   ngAfterViewInit() {
-    console.log(this.personTemplateRef);
-    console.log(this.personTemplatesRef);
-    console.log(this.tableColumns);
+    
   }
 
   getTemplateRef(index: number){
-    console.log(index);
-    return this.personTemplatesRef.toArray()[index];
+    if(this.tableColumns){
+      const column = this.tableColumns.toArray()[index];
+      return column.columnTemplate;
+    }
+    
   }
 
 }

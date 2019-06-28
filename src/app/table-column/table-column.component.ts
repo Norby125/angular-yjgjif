@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, Input } from '@angular/core';
 
 @Component({
   selector: 'app-table-column',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./table-column.component.css']
 })
 export class TableColumnComponent implements OnInit {
-
+  @Input() public columnTemplate: TemplateRef<any>;
   constructor() { }
 
   ngOnInit() {
